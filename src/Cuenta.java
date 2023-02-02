@@ -17,8 +17,17 @@ public class Cuenta {
     public void setIngreso(double ingreso) {
         this.saldoDeCuenta +=ingreso;
     }
-    public void setRetiro(double retiro) {
-        this.saldoDeCuenta -=retiro;
+    public boolean setRetiro(double retiro) {
+        if(retiro <= saldoDeCuenta){
+            this.saldoDeCuenta -=retiro;
+            return true;
+
+        }else {
+            System.out.println("saldo insuficiente");
+            return false;
+        }
+
+
     }
 
     public double getSaldoCuenta(){
